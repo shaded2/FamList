@@ -1,34 +1,39 @@
 {
-  "name": "OpenShift-Sample-App",
-  "version": "1.0.0",
-  "description": "OpenShift Sample Application",
-  "keywords": [
-    "OpenShift",
-    "Node.js",
-    "application",
-    "openshift"
-  ],
-  "author": {
-    "name": "Darren Cato",
-    "email": "famlist@eztransition.com",
-    "url":  "http://openshift.redhat.com/"
-  },
-  "homepage": "http://openshift.redhat.com/",
-  "repository": {
-    "type": "git",
-    "url": "https://gitub.com/openshift/crankcase"
-  },
+    "name": "Famlist-App",
+    "version": "1.0.0",
+    "description": "Famlist Shopping Application",
+    "keywords": [
+        "OpenShift",
+        "Node.js",
+        "application",
+        "openshift",
+        "Famlist",
+        "famlist"
+    ],
+    "author": {
+        "name": "Darren Cato",
+        "email": "famlist@eztransition.com",
+        "url":  "http://openshift.redhat.com/"
+    },
+    "homepage": "https://app-famlist.rhcloud.com/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/shaded2/famlist"
+    },
 
-  "engines": {
-    "node": ">= 0.6.0",
-    "npm": ">= 1.0.0"
-  },
-  "dependencies": {
-    "express": "2.5.8"
-  },
-  "devDependencies": {},
-  "bundleDependencies": [],
+    "engines": {
+        "node": ">= 0.6.0",
+        "npm": ">= 1.0.0"
+    },
+    "dependencies": {
+        "express": "2.5.8",
+        "mongodb": ">= 0.9.6-7",
+        "mongoose": ">= 2.5.10",
+        "everyauth": ">=0.2.32"
+    },
+    "devDependencies": {},
+    "bundleDependencies": [],
 
-  "private": true,
-  "main": "server.js"
+    "private": true,
+    "main": "server.js"
 }
