@@ -1,0 +1,21 @@
+#
+#  This file contains a list of globally installed and available npm modules.
+#
+
+#  DB drivers.
+mongodb
+mysql
+pg
+
+#  Other modules (including frameworks, middleware etc).
+async
+connect
+express@3.0.0r3
+formidable
+generic-pool
+hashish
+mime
+mkdirp
+node-static
+qs
+traverse
