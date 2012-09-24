@@ -14,6 +14,9 @@ models.examples = require('./models/example')(app.mongoose);
 require('./routes')(app, models, app.mongoose);
 
 //  Get the environment variables we need.
+//  If you are running this locally with the IP address or port failing
+//  to be resolved. Comment the next two lines and uncomment line next third
+//  and fourth line.
 var ipaddr  = process.env.OPENSHIFT_INTERNAL_IP;
 var port    = process.env.OPENSHIFT_INTERNAL_PORT || 8080;
 //var ipaddr  = '127.0.0.1';
