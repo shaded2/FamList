@@ -20,7 +20,7 @@ module.exports = function(app, models, mongoose){
         models.examples.find({}, function(err, docs){
             res.render( 'index.ejs', {
                 locals: {
-                    title: 'Node.js Index page',
+                    title: 'FamList - A shopping list for the entire family, Node.js',
                     page: 'index',
                     examples: docs
                 }
