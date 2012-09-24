@@ -1,3 +1,15 @@
-# Misc #
-node_modules
+# OS generated files #
+.DS_Store
+.DS_Store?
+Thumbs.db
+
+# Logs and databases #
+*.log
+*.sql
+*.sqlite
+
+# IDE Related files #
 .idea
+
+# Node #
+node_modules

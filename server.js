@@ -1,41 +1,17 @@
 #!/bin/env node
-//  OpenShift sample Node application
+// Node main application
 
 var express = require('express');
-var fs      = require('fs');
-
-//  Local cache for static content [fixed and loaded at startup]
-var zcache = { 'index.html': '' };
-zcache['index.html'] = fs.readFileSync('./views/index.html'); //  Cache index.html
-
 // Create "express" server.
-var app  = express.createServer();
+var app = module.exports = express.createServer();
+var fs = require('fs');
+app.mongoose = require('mongoose');
 
-app.configure(function(){
-    app.use(express.bodyParser());
-    app.use(express.static(__dirname + '/public'));
-    app.set('view engine', 'ejs');
-});
+var config = require('./config.js')(app, express);
+var models = {};
+models.examples = require('./models/example')(app.mongoose);
 
-/*  =====================================================================  */
-/*  Setup route handlers.  */
-/*  =====================================================================  */
-
-// Handler for GET /health
-app.get('/health', function(req, res){
-    res.send('1');
-});
-
-// Handler for GET /asciimo
-app.get('/asciimo', function(req, res){
-    var link="https://a248.e.akamai.net/assets.github.com/img/d84f00f173afcf3bc81b4fad855e39838b23d8ff/687474703a2f2f696d6775722e636f6d2f6b6d626a422e706e67";
-    res.send("<html><body><img src='" + link + "'><h1>testing html</h1></body></html>");
-});
-
-// Handler for GET /
-app.get('/', function(req, res){
-    res.send(zcache['index.html'], {'Content-Type': 'text/html'});
-});
+require('./routes')(app, models, app.mongoose);
 
 //  Get the environment variables we need.
 var ipaddr  = process.env.OPENSHIFT_INTERNAL_IP;
