@@ -2,7 +2,7 @@
 // Node main application
 
 var express = require('express');
-// Create "express" server.
+// Create "express" server
 var app = module.exports = express.createServer();
 var fs = require('fs');
 app.mongoose = require('mongoose');
