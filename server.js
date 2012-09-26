@@ -11,7 +11,8 @@ var config = require('./config.js')(app, express);
 var models = {};
 models.examples = require('./models/example')(app.mongoose);
 
-require('./routes')(app, models, app.mongoose);
+require('./routes/app_routes')(app, models, app.mongoose);
+require('./routes/api_routes')(app, models, app.mongoose);
 
 //  Get the environment variables we need.
 //  If you are running this locally with the IP address or port failing
