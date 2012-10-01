@@ -9,7 +9,10 @@ Open Source Family Shopping List
 ### Installation
 1. Install node.js 0.6.0 or greater
 2. Install mongodb 2.0.7
-3. execute npm install from the source root directory
+3. Execute npm install from the source root directory
+4. Start the mongodb demon. (example ./mongod)
+5. Start the server with "node server.js"
+6. Browse to http://localhost:8080
 
 #### Required Modules
 1. npm install express

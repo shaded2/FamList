@@ -1,6 +1,6 @@
 module.exports = function(app, models, mongoose){
     /*  =====================================================================  */
-    /*  Setup route handlers.  */
+    /*  Setup application route handlers.  */
     /*  =====================================================================  */
 
     // Handler for GET /health
