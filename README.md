@@ -11,5 +11,10 @@ Open Source Family Shopping List
 2. Install mongodb 2.0.7
 3. execute npm install from the source root directory
 
+#### Required Modules
+1. npm install express
+2. nom install mongoose
+2. npm install ejs
+
 ### Known Issues
 1. mongodb module will not install on Windows due to the inability to compile bson. This is an issue with the bson module and not npm or this application.

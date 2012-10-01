@@ -67,6 +67,20 @@
             $("#add-item").trigger('click');
         }
     });
+
+    $(".icon-minus").on("mouseenter mouseleave", function(e){
+        //console.log(this);
+        $(this).closest("i").toggleClass("icon-ok icon-minus");
+        $(this).siblings(".icon-remove").toggleClass("hidden");
+        //console.log(this);
+
+    });
+
+    $("#main-list").on("click", ".icon-remove", function(e){
+        $(this).closest("li").remove();
+    });
+
+
 </script>
 
 </body>
