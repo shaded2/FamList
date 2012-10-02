@@ -9,9 +9,9 @@ module.exports = function(app, models, mongoose){
     });
 
     // Handler for GET /api/examples
-    app.get('/api/examples', function(req, res){
-        //get all the examples
-        models.examples.find({}, function(err, docs){
+    app.get('/api/shopping_items', function(req, res){
+        //get all the shopping items
+        models.shopping_items.find({}, function(err, docs){
             if (!err) {
                 return res.send(docs);
             }

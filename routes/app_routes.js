@@ -16,13 +16,13 @@ module.exports = function(app, models, mongoose){
 
     // Handler for GET /
     app.get('/', function(req, res){
-        //get all the examples
-        models.examples.find({}, function(err, docs){
+        //get all the shopping items
+        models.shopping_items.find({}, function(err, docs){
             res.render( 'index.ejs', {
                 locals: {
                     title: 'FamList - A shopping list for the entire family, Node.js',
                     page: 'index',
-                    examples: docs
+                    items: docs
                 }
             });
         });

@@ -20,14 +20,14 @@ module.exports = function(app, express, mongoose){
     app.configure('development', function(){
         app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 
-        app.mongoose.connect('mongodb://localhost/nodemvr');
+        app.mongoose.connect('mongodb://localhost/famlist');
     });
 
     app.configure('production', function(){
         app.use(express.errorHandler());
 
         //app.mongoose.connect('mongodb://flame.mongohq.com:27087/nodemvr');
-        app.mongoose.connect('mongodb://localhost/nodemvr');
+        app.mongoose.connect('mongodb://localhost/famlist');
     });
 
     return config;

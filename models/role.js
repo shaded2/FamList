@@ -1,12 +1,12 @@
 module.exports = function(mongoose) {
-    var collection = 'examples';
+    var collection = 'roles';
     var Schema = mongoose.Schema;
-    var ObjectId = Schema.ObjectId;
 
     var schema = new Schema({
-        author: ObjectId,
-        name: String,
-        date: Date
+        role: Number,
+        description: String,
+        created: Date,
+        last_modified: Date
     });
 
     return mongoose.model(collection, schema);
