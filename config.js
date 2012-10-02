@@ -21,13 +21,14 @@ module.exports = function(app, express, mongoose){
         app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 
         app.mongoose.connect('mongodb://localhost/famlist');
+        //app.mongoose.connect('mongodb://<dbuser>:<dbpassword>@<XXXXXXXX>.mongolab.com:37977/famlist');
     });
 
     app.configure('production', function(){
         app.use(express.errorHandler());
 
-        //app.mongoose.connect('mongodb://flame.mongohq.com:27087/nodemvr');
         app.mongoose.connect('mongodb://localhost/famlist');
+        //app.mongoose.connect('mongodb://<dbuser>:<dbpassword>@<XXXXXXXX>.mongolab.com:37977/famlist');
     });
 
     return config;
