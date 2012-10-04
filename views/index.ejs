@@ -26,11 +26,16 @@
     </div>
 
     <ul class="nav nav-tabs nav-stacked" id="main-list">
-        <li><a href="#"><span><i class="icon-minus"></i> <i class="icon-remove hidden"></i></span> Bread</a></li>
-        <li><a href="#"><span><i class="icon-minus"></i> <i class="icon-remove hidden"></i></span> Eggs</a></li>
-        <li><a href="#"><span><i class="icon-minus"></i> <i class="icon-remove hidden"></i></span> Milk</a></li>
-        <li><a href="#"><span><i class="icon-minus"></i> <i class="icon-remove hidden"></i></span> Carrots</a></li>
-        <li><a href="#"><span><i class="icon-ok"></i> <i class="icon-remove hidden"></i></span> Peas</a></li>
+        <% items.forEach(function(item){ %>
+            <li><a href="#">
+                    <span>
+                        <i class="icon-minus"></i>
+                        <i class="icon-remove hidden"></i>
+                    </span>
+                    <span data-id="<%= item._id %>" data-owner="<%= item.owner %>"><%= item.description %></span>
+                </a>
+            </li>
+        <% }) %>
     </ul >
 </div >
 <!- - /container -->

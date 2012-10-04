@@ -57,7 +57,7 @@
     $("#add-item").on("click", function(e){
         e.preventDefault();
         var listItem = $("#list-input").val();
-        $("#main-list").prepend('<li><a href="#">'+listItem+'</a></li>');
+        $("#main-list").prepend('<li><a href="#"><span><i class="icon-minus"></i><i class="icon-remove hidden"></i></span><span data-id="" data-owner="">'+listItem+'</span></a></li>');
         $("#list-input").val("");
     });
 
