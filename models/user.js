@@ -10,6 +10,7 @@ module.exports = function(mongoose) {
         role: Number,
         user_name: String,
         password: String,
+        email: String,
         salt: String,
         created: Date,
         last_modified: Date

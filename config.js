@@ -10,10 +10,24 @@ module.exports = function(app, express, mongoose){
         app.use(express.bodyParser());
         app.use(express.cookieParser());
         app.use(express.session({ secret: 'topsecret' }));
-        app.use(express.bodyParser());
         app.use(express.methodOverride());
         app.use(app.router);
         app.use(express.static(__dirname + '/public'));
+    });
+
+    // setup parameter validation
+    app.param(function(name, fn){
+        if (fn instanceof RegExp) {
+            return function(req, res, next, val){
+                var captures;
+                if (captures = fn.exec(String(val))) {
+                    req.params[name] = captures;
+                    next();
+                } else {
+                    next('route');
+                }
+            }
+        }
     });
 
     //env specific config
