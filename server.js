@@ -13,8 +13,8 @@ models.users = require('./models/user')(app.mongoose);
 models.roles = require('./models/role')(app.mongoose);
 models.shopping_items = require('./models/shopping_item')(app.mongoose);
 
-require('./routes/app_routes')(app, models, app.mongoose);
-require('./routes/api_routes')(app, models, app.mongoose);
+require('./routes/app-routes')(app, models, app.mongoose);
+require('./routes/shopping-items-api-routes')(app, models, app.mongoose);
 
 // Specify the port and IP address to listen on
 var ipaddr  = 'localhost';
