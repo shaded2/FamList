@@ -93,6 +93,7 @@ module.exports = function(app, models, mongoose){
                         var shoppingItemModel = new models.shopping_items();
                         var now = new Date();
 
+                        shoppingItemModel._id =  mongoose.Types.ObjectId.fromString(req.params.id.toString());
                         shoppingItemModel.description = req.body.description;
                         shoppingItemModel.owner = mongoose.Types.ObjectId.fromString(req.body.owner);
                         shoppingItemModel.created = now;
