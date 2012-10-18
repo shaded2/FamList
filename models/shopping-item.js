@@ -4,10 +4,10 @@ module.exports = function(mongoose) {
     var ObjectId = Schema.ObjectId;
 
     var schema = new Schema({
-        description: String,
-        owner: ObjectId,
-        created: Date,
-        last_modified: Date
+        description: {type: String, required: true},
+        owner: {type: ObjectId, required: true},
+        created: {type: Date, default: Date.now},
+        last_modified: {type: Date, default: Date.now}
     });
 
     return mongoose.model(collection, schema);
